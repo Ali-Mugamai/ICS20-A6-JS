@@ -17,20 +17,16 @@ const getImage = async (URLAddress) => {
   try {
     const result = await fetch(URLAddress)
     const jsonData = await result.json()
-    const realfeel = jsonData.weather[0]
-    const image = realfeel.icon
+    const card = jsonData.card_images[0]
+    const image = image_url.icon
 
     console.log(jsonData)
-    console.log(jsonData.weather)
-    document.getElementById("api-image").innerHTML =
-      "<img src='https://openweathermap.org/img/wn/" +
+    console.log(jsonData.card_images)
+    document.getElementById("api-card").innerHTML =
+      "<img src="+
       image +
-      "@2x.png' alt='Weather Icon' width='10%'><br><h5>"
+      "alt='random yugioh card' width='10%'><br><h5>"
     ;(">")
-
-    let celcius = 0
-
-    let c = jsonData.main.temp - 273.15
 
     document.getElementById("api-weather").innerHTML =
       "<p>temperature in ottawa is </p>" + c.toFixed(2)
@@ -40,5 +36,5 @@ const getImage = async (URLAddress) => {
 }
 
 getImage(
-  "https://api.openweathermap.org/data/2.5/weather?lat=45.4211435&lon=-75.6900574&appid=fe1d80e1e103cff8c6afd190cad23fa5"
+  "https://db.ygoprodeck.com/api/v7/randomcard.php"
 )
