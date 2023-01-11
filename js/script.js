@@ -18,7 +18,7 @@ const getImage = async (URLAddress) => {
     const result = await fetch(URLAddress)
     const jsonData = await result.json()
     const card = jsonData.card_images[0]
-    const image = image_url.icon
+    const image = card.image_url
 
     console.log(jsonData)
     console.log(jsonData.card_images)
