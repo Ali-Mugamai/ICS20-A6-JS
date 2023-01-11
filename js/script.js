@@ -17,8 +17,9 @@ const getImage = async (URLAddress) => {
   try {
     const result = await fetch(URLAddress)
     const jsonData = await result.json()
-    const card = jsonData.card_images[0]
-    const image = card.image_url
+    const card_image = jsonData.card_images[0]
+    const image = card_image.image_url
+    const card_desc = jsonData.desc[0]
 
     console.log(jsonData)
     console.log(jsonData.card_images)
@@ -28,8 +29,8 @@ const getImage = async (URLAddress) => {
       " alt='random yugioh card' width='10%'><br><h5>"
     ;(">")
 
-    document.getElementById("api-weather").innerHTML =
-      "<p>temperature in ottawa is </p>" + c.toFixed(2)
+    document.getElementById("api-card_desc").innerHTML =
+      "<p>" + card_desc + "</p>"
   } catch (err) {
     console.log(err)
   }
