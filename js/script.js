@@ -19,7 +19,7 @@ const getImage = async (URLAddress) => {
     const jsonData = await result.json()
     const card_image = jsonData.card_images[0]
     const image = card_image.image_url
-    const card_desc = jsonData.desc[0]
+    const card_desc = console.log(jsonData[0].url)
 
     console.log(jsonData)
     console.log(jsonData.card_images)
