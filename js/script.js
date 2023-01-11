@@ -25,7 +25,7 @@ const getImage = async (URLAddress) => {
     document.getElementById("api-card").innerHTML =
       "<img src="+
       image +
-      "alt='random yugioh card' width='10%'><br><h5>"
+      "' alt='random yugioh card' width='10%'><br><h5>"
     ;(">")
 
     document.getElementById("api-weather").innerHTML =
