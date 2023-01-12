@@ -26,7 +26,7 @@ const getImage = async (URLAddress) => {
     document.getElementById("api-card").innerHTML =
       "<img src="+
       image +
-      " alt='random yugioh card' width='50%' height='100%'><br><h5>"
+      " alt='random yugioh card' width='25%' height='50%'><br><h5>"
     ;(">")
     console.log(jsonData.desc)
     document.getElementById("api-card_desc").innerHTML =
