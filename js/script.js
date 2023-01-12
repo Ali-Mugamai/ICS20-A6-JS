@@ -30,7 +30,7 @@ const getImage = async (URLAddress) => {
     ;(">")
     console.log(jsonData.desc)
     document.getElementById("api-card_desc").innerHTML =
-      "<p>" + card_desc + "</p>"
+      card_desc
   } catch (err) {
     console.log(err)
   }
