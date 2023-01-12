@@ -19,16 +19,16 @@ const getImage = async (URLAddress) => {
     const jsonData = await result.json()
     const card_image = jsonData.card_images[0]
     const image = card_image.image_url
-    const card_desc = console.log(jsonData[0].result)
+    const card_desc = jsonData.desc[0]
 
     console.log(jsonData)
     console.log(jsonData.card_images)
     document.getElementById("api-card").innerHTML =
       "<img src="+
       image +
-      " alt='random yugioh card' width='10%'><br><h5>"
+      " alt='random yugioh card' width='50%' height='100%'><br><h5>"
     ;(">")
-
+    console.log(jsonData.desc)
     document.getElementById("api-card_desc").innerHTML =
       "<p>" + card_desc + "</p>"
   } catch (err) {
